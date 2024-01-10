@@ -36,9 +36,10 @@ async function main() {
 // ------------------------------------
 
 
-app.get("/",(req,res)=>{
-    res.send("Hello bhai saab");
-})
+app.get("/", async (req, res) => {
+        const allListings = await Listing.find({});
+        res.render("listings/index.ejs", { allListings });
+    });
 
 // app.get("/test",async (req,res)=>{
 //     let sample = new Listing({
