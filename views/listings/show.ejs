@@ -1,35 +1,37 @@
 <% layout('/layout/boilerplate.ejs'); -%>
 
-<body>
+    <body>
 
-<div class="row  mt-5">
-    <div class="col-8 offset-2" >
-    <!-- <h1>Each listing in detail</h1> -->
-    
-    <div class="card">
-    <img src="<%= listing.image %>" class="card-img-top show-img" alt="Listing Image">
-    <div class="card-body">
-        <h3 class="card-text"><i><%= listing.title %></i> </h3>
-        <h6>
+        <div class="row  mt-5">
+            <div class="col-8 offset-2">
+                <!-- <h1>Each listing in detail</h1> -->
 
-            <%= listing.description %> <br>
-        </h6>
-           <p><b><i> &#8377;<%= listing.price%> </i></b><br>
-            <%= listing.location%> <br>
-            <%= listing.country %>
-        </p>
-        <p class="btns">
+                <div class="card">
+                    <img src="<%= listing.image %>" class="card-img-top show-img" alt="Listing Image">
+                    <div class="card-body">
+                        <h3 class="card-text"><i>
+                                <%= listing.title %>
+                            </i> </h3>
+                        <h6>
 
-            <form action="/listings/<%= listing._id %>/?_method=DELETE" method="post">
-                <button class="btn btn-dark edit-btn">Delete</button>
-            <a href="/listings/<%= listing._id%>/edit" class="btn btn-dark edit-btn">Edit</a>
-        </p>
-    </div>
-</div>
+                            <%= listing.description %> <br>
+                        </h6>
+                        <p><b><i> &#8377;<%= listing.price%> </i></b><br>
+                            <%= listing.location%> <br>
+                                <%= listing.country %>
+                        </p>
+                        <p class="btns">
+
+                        <form action="/listings/<%= listing._id %>/?_method=DELETE" method="post">
+                            <button class="btn btn-dark edit-btn">Delete</button>
+                            <a href="/listings/<%= listing._id%>/edit" class="btn btn-dark edit-btn">Edit</a>
+                            </p>
+                    </div>
+                </div>
 
 
-    
-    </form>
-</div>
-</div>
-</body>
+
+                </form>
+            </div>
+        </div>
+    </body>
